@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ensala/components/custom_drawer.dart';
 
 void main() {
   runApp(const MainApp());
@@ -18,60 +19,13 @@ class MainApp extends StatelessWidget {
           backgroundColor: Colors.green,
           title: Text('Ensala+'),
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.lightBlueAccent,
-          child: Column(
-            children: [
-              const DrawerHeader(
-                decoration: BoxDecoration(
-                  color: Colors.blue, // Cor de fundo do cabeçalho
-                ),
-                child: Text(
-                  'Menu',
-                  style: TextStyle(fontSize: 24, color: Colors.white),
-                ),
-              ),
-              Expanded(
-                child: ListView(
-                  children: const [
-                    ListTile(
-                      leading: CircleAvatar(
-                        radius: 20,
-                        backgroundImage: NetworkImage(
-                          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJeT7E9BFcOz45LrS-aD7CbrPDxLlYRpxKeg&s',
-                        ),
-                      ),
-                      title: Text('Perfil'),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.settings,
-                        size: 35,
-                        color: Colors.limeAccent,
-                      ),
-                      title: Text('Configurações'),
-                    ),
-                    ListTile(
-                      leading: Icon(
-                        Icons.campaign,
-                        size: 40,
-                        color: Colors.limeAccent,
-                      ),
-                      title: Text('Avisos'),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-
+      drawer: CustomDrawer(),
         body: Center(
           child: Container(
             padding: EdgeInsets.all(20),
-            margin: EdgeInsets.all(50),
+            margin: EdgeInsets.all(20),
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 0, 0, 0), // Fundo branco
+              color: const Color.fromARGB(255, 0, 0, 0), // Fund o branco
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: const Color.fromRGBO(76, 175, 80, 1),
